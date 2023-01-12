@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*--------------------------
+common styles or utilities 
+----------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F3F1FF;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+:root {
+    --primary-color: #562EFF;
+    --secondary-color: #ED6B4F;
+    --light-color: #fff;
+    --dark-color: #000;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 24px;
+    /* line-height: 36px; */
+    color: var(--primary-color);
+}
+
+/*-------------------
+    header styles
+---------------------*/
+header {
+    background: var(--primary-color);
+    padding-block: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+    gap: 15px;
+}
+
+.logo a img {
+    width: 40px;
+    height: 51px;
+}
+
+.logo span {
+    font-weight: 500;
+    font-size: 24px;
+    /* line-height: 36px; */
+    color: var(--light-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 400;
+    font-size: 16px;
+    /* line-height: 24px; */
+    color: var(--light-color);
+}
+
+.close,
+.bar {
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--light-color);
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+
+
+/*------------------------
+    Media Queries 
+--------------------------- */
+
+/* ----------------------- 
+    Mobile Device
+--------------------------*/
+@media screen and (max-width: 576px) {
+
+    /* ----------------
+            navbar  
+    ----------------------*/
+    header,
+    main {
+        padding-inline: 10px;
+    }
+
+    .logo a img {
+        width: 35px;
+        height: 46px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        top: 0;
+        right: -300px;
+        background: var(--primary-color);
+        height: 100vh;
+        width: 300px;
+        padding: 60px 30px;
+        box-shadow: 0 40px 40px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+    }
+
+    .nav-menu.active {
+        right: 0px;
+    }
+
+    .nav-menu li:first-child {
+        margin-top: 30px;
+    }
+
+    .close,
+    .bar {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .close {
+        position: absolute;
+        top: 30px;
+    }
+
+}
+
+/* ----------------------- 
+    Tablet Device
+--------------------------*/
+@media screen and (min-width: 577px) and (max-width: 992px) {
+
+    /* ----------------
+            navbar  
+    ----------------------*/
+
+    header,
+    main {
+        padding-inline: 20px;
+    }
+
+    .close-area,
+    .bar-area {
+        display: none;
+    }
+
+}
